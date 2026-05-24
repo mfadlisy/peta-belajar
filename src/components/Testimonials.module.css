@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playpen+Sans:wght@500;700&display=swap');
+
+.section {
+  background-color: #FAFBFD;
+  padding: 6rem 0 4rem 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background: #EEF2FF;
+  padding: 0.6rem 1.2rem;
+  border-radius: 100px;
+  color: #0D66F8;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(13, 102, 248, 0.08);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0F172A;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #64748B;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Horizontal Board Layout */
+.boardWrapper {
+  width: 100%;
+  position: relative;
+  margin-top: 2rem;
+}
+
+/* Beautiful fading mask on sides for desktop */
+@media (min-width: 1024px) {
+  .boardWrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #FAFBFD);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .boardWrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(to left, transparent, #FAFBFD);
+    pointer-events: none;
+    z-index: 5;
+  }
+}
+
+.board {
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #E2E8F0 transparent;
+  padding-bottom: 1.5rem;
+}
+
+/* Elegant scrollbar styling */
+.board::-webkit-scrollbar {
+  height: 6px;
+}
+
+.board::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 100px;
+}
+
+.board::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}
+
+/* Ruled paper background inside scroll content */
+.scrollContent {
+  width: max-content;
+  min-width: 100%;
+  display: flex;
+  gap: 4rem;
+  padding: 3.5rem 6rem;
+  position: relative;
+  background-image: linear-gradient(#F1F5F9 2px, transparent 2px);
+  background-size: 100% 36px;
+  align-items: center;
+}
+
+/* Sticky Note Wrapper & Card */
+.stickyNoteWrapper {
+  position: relative;
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.stickyNoteWrapper:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  z-index: 10;
+}
+
+.stickyNoteWrapper:hover .card {
+  box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.12), 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+}
+
+/* Pushpin styles */
+.pushpinContainer {
+  position: absolute;
+  top: -24px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.pushpin {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+  transition: transform 0.2s ease;
+}
+
+.stickyNoteWrapper:hover .pushpin {
+  transform: scale(1.05) rotate(5deg);
+}
+
+/* White Outer Card resembling paper board */
+.card {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Colored inner card */
+.innerCard {
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.cardNumber {
+  font-family: 'Caveat', 'Playpen Sans', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.quote {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  font-family: 'Playpen Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.divider {
+  border-top: 1px dashed;
+  margin-bottom: 1.25rem;
+}
+
+.authorSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.15rem;
+}
+
+.authorRole {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #64748B;
+}
+
+/* Hint at bottom */
+.scrollHint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  color: #94A3B8;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hintIcon {
+  animation: bounceHorizontal 1.5s infinite;
+}
+
+@keyframes bounceHorizontal {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .scrollContent {
+    padding: 3rem 2rem;
+    gap: 2.5rem;
+  }
+
+  .stickyNoteWrapper {
+    width: 290px;
+    transform: none !important;
+    /* Flat layout on mobile for best reading */
+  }
+}

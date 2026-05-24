@@ -1,0 +1,253 @@
+.section {
+  background-color: #FAFBFD;
+  padding: 6rem 0 6rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.banner {
+  background: linear-gradient(135deg, #1A306C 0%, #26479F 100%);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.5rem 4rem;
+  box-shadow: 0 20px 40px -15px rgba(26, 48, 108, 0.4);
+  position: relative;
+  overflow: visible;
+  /* Allow floating card to pop out if needed */
+  gap: 4rem;
+}
+
+.leftCol {
+  flex: 0 0 45%;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+
+.title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 2.25rem;
+  max-width: 95%;
+}
+
+.btnWrapper {
+  display: flex;
+}
+
+.btnPrimary {
+  background: #F49F06;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100px;
+  /* Perfect pill style */
+  padding: 0.9rem 2rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(244, 159, 6, 0.25);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(244, 159, 6, 0.4);
+  background: #FFAF22;
+}
+
+.btnIcon {
+  transition: transform 0.2s ease;
+}
+
+.btnPrimary:hover .btnIcon {
+  transform: translateX(4px);
+}
+
+/* Right Column: Framed Image and absolute floating card */
+.rightCol {
+  flex: 0 0 50%;
+  max-width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.imageFrame {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  display: flex;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Floating White Checklist Card */
+.floatingCard {
+  position: absolute;
+  left: -100px;
+  /* Overlaps exactly over the bottom-left corner of the imageFrame */
+  bottom: 20px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.2);
+  width: 300px;
+  z-index: 10;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.listTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #334155;
+}
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+  background: rgba(16, 185, 129, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.checkIcon svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 1100px) {
+  .banner {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 1.85rem;
+  }
+
+  .floatingCard {
+    left: -40px;
+    width: 320px;
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .banner {
+    flex-direction: column;
+    padding: 3.5rem 3rem;
+    gap: 3.5rem;
+    overflow: hidden;
+    /* Hide overflow on mobile to protect layout */
+  }
+
+  .leftCol {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .rightCol {
+    flex: 0 0 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .imageFrame {
+    max-width: 100%;
+  }
+
+  .floatingCard {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    max-width: 450px;
+    margin-top: -2rem;
+    /* overlaps bottom of mobile frame nicely */
+  }
+}
+
+@media (max-width: 576px) {
+  .banner {
+    padding: 2.5rem 1.75rem;
+    border-radius: 24px;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .btnPrimary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .floatingCard {
+    margin-top: -1.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+}

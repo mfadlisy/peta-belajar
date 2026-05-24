@@ -1,0 +1,432 @@
+.heroWrapper {
+  padding: 3rem 0 5rem 0;
+  background-color: #FFFFFF;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.heroTop {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  background: #E4F1FF;
+  border-radius: 100px;
+  color: #0D66F8;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 4.2rem;
+  font-weight: 800;
+  line-height: 1.05;
+  color: #0F172A;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  background: #2563EB;
+  border: 1px solid #2563EB;
+  border-radius: 100px;
+  padding: 0.5rem;
+  padding-left: 1.8rem;
+  gap: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 1.5rem;
+}
+
+.btnContainer:hover {
+  background: #1D4ED8;
+  border-color: #1D4ED8;
+}
+
+.btnText {
+  font-weight: 600;
+  color: #FFFFFF;
+  font-size: 1.05rem;
+}
+
+.btnAction {
+  width: 50px;
+  height: 50px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563EB;
+  transition: all 0.3s;
+}
+
+.btnContainer:hover .btnAction {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #64748B;
+  font-weight: 500;
+  max-width: 380px;
+}
+
+.captionIcon {
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+/* Image Container */
+.imageBox {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: #EAF4FF;
+  border-radius: 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+  /* Allows floating cards to breach borders */
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 32px;
+  z-index: 2;
+}
+
+/* Floating Cards Base */
+.floatingCard {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  z-index: 5;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardIcon.purple {
+  background: #F3E8FF;
+  color: #9333EA;
+}
+
+.cardIcon.orange {
+  background: #FFEDD5;
+  color: #EA580C;
+}
+
+.cardIcon.blue {
+  background: #DBEAFE;
+  color: #2563EB;
+}
+
+.cardText h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.2rem;
+}
+
+.cardText p {
+  font-size: 0.8rem;
+  color: #64748B;
+}
+
+/* Specific Cards Positioned relative to imageBox */
+.cardMateri {
+  top: 20%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.cardTujuan {
+  top: 30%;
+  right: -20%;
+  animation-delay: 1.5s;
+}
+
+.cardAdaptif {
+  bottom: 5%;
+  right: -8%;
+  animation-delay: 3s;
+}
+
+.cardVARK {
+  bottom: 12%;
+  left: -10%;
+  animation-delay: 4.5s;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.varkIcons {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.varkIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.varkBlue {
+  background: #E0E7FF;
+  color: #4F46E5;
+}
+
+.varkGreen {
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.varkYellow {
+  background: #FEF9C3;
+  color: #CA8A04;
+}
+
+.varkPurple {
+  background: #F3E8FF;
+  color: #9333EA;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 968px) {
+  .heroWrapper {
+    min-height: auto;
+    padding: 4rem 0 3rem 0;
+  }
+  
+  .heroTop {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+  
+  .content {
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+    line-height: 1.15;
+  }
+  
+  .description {
+    max-width: 100%;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+  
+  .imageBox {
+    height: 480px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  
+  .caption {
+    max-width: 100%;
+    text-align: left;
+  }
+  
+  /* Shifting floating cards to stay nicely inside screen bounds */
+  .cardMateri {
+    left: 2%;
+    top: 8%;
+  }
+  
+  .cardTujuan {
+    right: 2%;
+    top: 25%;
+  }
+  
+  .cardAdaptif {
+    right: 2%;
+    bottom: 8%;
+  }
+  
+  .cardVARK {
+    left: 2%;
+    bottom: 8%;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroWrapper {
+    padding: 2.5rem 0 2.5rem 0;
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+    padding: 0.35rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .title {
+    font-size: 2.1rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  
+  .btnContainer {
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 1.2rem;
+    gap: 1rem;
+  }
+  
+  .btnText {
+    font-size: 0.95rem;
+  }
+  
+  .btnAction {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .imageBox {
+    height: 380px;
+    border-radius: 20px;
+  }
+  
+  .heroImage {
+    border-radius: 20px;
+  }
+  
+  /* Make floating cards extremely compact on small mobile screens */
+  .floatingCard {
+    padding: 0.5rem 0.8rem;
+    gap: 0.6rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  }
+  
+  .cardIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+  
+  .cardIcon img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .cardText h4 {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+  }
+  
+  .cardText p {
+    display: none; /* Hide descriptions to stay compact */
+  }
+  
+  .cardVARK {
+    padding: 0.5rem 0.8rem;
+  }
+  
+  .varkIcons {
+    gap: 0.4rem;
+    margin-top: 0.2rem;
+  }
+  
+  .varkIcon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+  
+  .varkIcon img {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .cardMateri {
+    left: 2%;
+    top: 5%;
+  }
+  
+  .cardTujuan {
+    right: 2%;
+    top: 25%;
+  }
+  
+  .cardAdaptif {
+    right: 2%;
+    bottom: 5%;
+  }
+  
+  .cardVARK {
+    left: 2%;
+    bottom: 5%;
+  }
+}
