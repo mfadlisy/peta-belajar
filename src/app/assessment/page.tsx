@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { saveLearningProfile } from '@/lib/localLearning';
+import { saveLearningProfile } from '@/lib/storage/localLearning';
 import styles from './assessment.module.css';
 
 // Definition of assessment questions

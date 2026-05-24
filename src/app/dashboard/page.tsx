@@ -8,7 +8,7 @@ import {
   saveRoadmap,
   type LocalRoadmap,
   type LocalRoadmapStep,
-} from '@/lib/localLearning';
+} from '@/lib/storage/localLearning';
 import styles from './dashboard.module.css';
 
 type RoadmapStep = LocalRoadmapStep;

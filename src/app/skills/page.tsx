@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getLearningProfile, saveRoadmap, type LearningProfile } from '@/lib/localLearning';
+import { getLearningProfile, saveRoadmap, type LearningProfile } from '@/lib/storage/localLearning';
 import styles from './skills.module.css';
 
 interface GeneratedStep {
